@@ -18,6 +18,7 @@ import scala.io.Source
 object StreamProcessor {
     def main(args:Array[String]): Unit =
     {
+        println("hi")
         // loading configuration
         val conf: Config = ConfigFactory.load()
         val settings: Settings = new Settings(conf)
@@ -54,6 +55,8 @@ object StreamProcessor {
             .option("maxOffsetsPerTrigger", settings.spark("max_offsets_per_trigger"))
             .option("useDeprecatedOffsetFetching",settings.spark("deprecated_offsets"))
             .load()
+
+        System.out.println("Reading from Kafka",inputDF)
 
         // explode the data from Avro
         val expandedDF = inputDF

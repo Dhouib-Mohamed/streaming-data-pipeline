@@ -23,9 +23,9 @@ libraryDependencies ++= Seq(
 javaOptions := Seq("-Dconfig.resource=deployment.conf")
 
 //below filename is default for assembly, but I include it for readability
-assemblyJarName in assembly := "streamprocessor-assembly-1.0.jar"
+assembly / assemblyJarName := "streamprocessor-assembly-1.0.jar"
 
-assemblyMergeStrategy in assembly := {
+assembly / assemblyMergeStrategy := {
   case "reference.conf" => MergeStrategy.concat
   case "META-INF/services/org.apache.spark.sql.sources.DataSourceRegister" => MergeStrategy.concat
   case PathList("META-INF", xs@_*) => MergeStrategy.discard
