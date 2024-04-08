@@ -1,3 +1,5 @@
+The related master's thesis is shared on Google Drive here:  https://drive.google.com/file/d/17BBSlaHi5MKmo0qygaceogeOweqCWx9n/view?usp=drivesdk
+---
 # Finnhub Streaming Data Pipeline
 
 The project is a streaming data pipeline based on Finnhub.io API/websocket real-time trading data created for a sake of my master's thesis related to stream processing.
@@ -66,6 +68,10 @@ terraform apply
 ## Potential improvements
 
 There is definitely some room for improvement for the pipeline. The solution itself has some issues at the moment and there are some ideas that would enable its full potential in production:
+
+- November 2023 update: deleted SparkOperator image
+
+It seems that the SparkOperator image from Google Container Registry is deleted, therefore the pipeline will fail to build. If you would like to run the pipeline on your own, you will need to replace the Spark image first and possibly alter some configuration settings.
 
 - Cloud deployment
 
